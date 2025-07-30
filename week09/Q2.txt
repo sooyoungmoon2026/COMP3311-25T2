@@ -1,0 +1,6 @@
+R(A,B,C,D,E,F,G)
+F = { A → B, BC → F, BD → EG, AD → C, D → F, BEG → FA }
+
+A+ = {AB}
+ACEG+ = {ABCEFG}
+BD+ = {ABCDEFG} = R

@@ -1,0 +1,10 @@
+R(A,B,C,D,E)
+F = { A → B, BC → E, ED → A }
+
+CD+ = {CD}
+ACD+ = {ABCDE} = R -> candidate
+BCD+ = {ABCDE} = R -> candidate
+CDE+ = {ABCDE} = R -> candidate
+
+This is not BCNF
+Yes, this is 3NF

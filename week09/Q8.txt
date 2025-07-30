@@ -1,0 +1,16 @@
+R(acct#, branch#, tfn, kind, balance, city, name)
+
+{
+    acct# -> kind, 
+    acct# -> balance,
+    acct# -> branch#
+    branch# -> city,
+    tfn -> name
+}
+
+R1(acct#, kind) = { acct# -> kind } 
+R2(acct#, balance) = { acct# -> balance }
+R3(acct#, branch) = { acct# -> branch# }
+R4(branch#, city) = { branch# -> city }
+R5(tfn, name) = { tfn -> name }
+R6(acct#, branch#) = {}

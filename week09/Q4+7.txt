@@ -1,0 +1,80 @@
+R(A,B,C,D)
+---------------
+(i) {C → D,   C → A,   B → C}
+B+ = {ABCD} = R -> candidate
+No, this is not BCNF.
+No, this is not 3NF.
+
+--- 3NF ---
+Minimal cover - {C → D,   C → A,   B → C}
+R1(CD) F ={C -> D}
+R2(CA) F ={C -> A}
+R3(BC) F ={B -> C}
+
+--- BCNF ---
+R1(BC) F = {B → C}
+R2(CD) F = {C → D}
+R3(CA) F = {C → A}
+
+(ii) {B → C,   D → A}
+BD+ = {ABCD} = R -> candidate
+No, this is not BCNF.
+No, this is not 3NF.
+
+--- 3NF ---
+Minimal Cover - {B → C,   D → A}
+R1(BC) F = {B->C}
+R2(DA) F = {D->A}
+R3(BD) F = {}
+
+--- BCNF ---
+R1(BD) F = {}
+R2(BC) F = {B → C}
+R3(DA) F = {D → A}
+
+
+(iii) {ABC → D,   D → A}
+BC+ = {BC}
+ABC+ = {ABCD} = R -> candidate
+BCD+ = {ABCD} = R -> candidate
+No, this is not BCNF.
+Yes, this is 3NF.
+
+--- BCNF ---
+R1(BCD) F = {}
+R2(DA) F = {D → A}
+
+(iv) {A → B,   BC → D,   A → C}
+A+ = {ABCD} = R -> candidate
+No, this is not BCNF.
+No, this is not 3NF.
+
+--- 3NF ---
+Minimal cover - {A → B,   BC → D,   A → C}
+B+ = {B}
+C+ = {C}
+R1(AB) = {A -> B}
+R2(BCD) = {BC -> D}
+R3(AC) = {A -> C}
+
+--- BCNF ---
+R1(ABC) F = {A → B,   A → C}
+R2(BCD) F = {BC → D}
+
+(v) {AB → C,   AB → D,   C → A,   D → B}
+AB+ = {ABCD} = R -> candidate
+AD+ = {ABCD} = R -> candidate
+BC+ = {ABCD} = R -> candidate
+CD+ = {ABCD} = R -> candidate
+No, this is not BCNF.
+Yes, this is 3NF.
+
+--- BCNF ---
+R1(CD) F = {}
+R2(CA) F = {C → A}
+R3(DB) F = {D → B}
+
+(vi) {A → BCD}
+A+ = {ABCD} = R -> candidate
+Yes, this is BCNF.
+Yes, this is 3NF
