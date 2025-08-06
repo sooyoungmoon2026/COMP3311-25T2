@@ -1,0 +1,57 @@
+T1:R(X)     W(X)
+T2:     R(X)    W(X)
+
+T1<->T2
+This is not conflict-serializable
+
+T1,T2   This is not view equivalent
+T2,T1   This is not view equivalent
+This is not view-serializable
+
+------------------
+
+T1:W(X)     R(Y)
+T2:     R(Y)    R(X)
+
+T1->T2
+This is conflict-serializable
+-> this is also view-serializable
+
+------------------
+
+T1:R(X)             R(Y)
+T2:     R(Y)    R(X)
+T3:         W(X)
+
+T1,T3,T2
+
+T1->T3->t2
+This is conflict-serializable
+-> this is also view-serializable
+
+------------------
+
+T1:R(X) R(Y) W(X)           W(X)
+T2:                 R(Y)        R(Y)
+T3:                     W(Y) 
+
+T1->T3<->T2
+Not conflict-serializable
+
+By observation, T2 has reads of Y on both ends of T3's Y write
+so there is no order of T2 and T3 that allows us to read
+the right versions for both reads. Thus, not view serializable.
+
+------------------
+
+T1:R(X)     W(X)
+T2:     W(X) 
+T3:             W(X)
+
+T3<-T1<->T2->T3
+This is not conflict-serializable
+
+T1,T2,T3    view equivalent
+T2,T1,T3
+
+This is view serializable

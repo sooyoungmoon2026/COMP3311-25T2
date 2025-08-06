@@ -1,0 +1,7 @@
+Proj[speed](PCs) -> select distinct speed from PCs
+
+(a) {700, 1000, 1500}
+(b) {700, 700, 1000, 1000, 1500}
+(c) 1067
+(d) 980
+(e) No, the values in a bag and set are the same, just the frequency changes.

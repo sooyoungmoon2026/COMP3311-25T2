@@ -1,0 +1,13 @@
+T1:      R(A) W(Z)                C
+T2:                R(B) W(Y)        C
+T3: W(A)                     W(B)     C
+
+T2->T3->T1
+This is conflict serializable
+
+T1: R(X) R(Y) W(X)           W(X)
+T2:                R(Y)           R(Y)
+T3:                     W(Y)
+
+T1->T3<->T2
+This is not conflict serializable
